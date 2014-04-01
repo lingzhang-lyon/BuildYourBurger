@@ -5,20 +5,20 @@ public class BaseBurger implements Burger
     private String Meat;
     private String Weight;
     private String BunOrBowl;    
-    private String LettuceOrMix;
+
     
     public BaseBurger(){  //default constructor for test
         Meat="Beef";
         Weight="1/3lb";
         BunOrBowl="On A Bun";    
-        LettuceOrMix="Lettuce Blend";
+
     }
     
-    public BaseBurger (String meat, String weight, String bunOrBowl, String lettuceOrMix){
+    public BaseBurger (String meat, String weight, String bunOrBowl){
         Meat=meat;
         Weight=weight;
         BunOrBowl=bunOrBowl;
-        LettuceOrMix=lettuceOrMix;
+
     }
     
     public double calPrice(){
@@ -31,7 +31,7 @@ public class BaseBurger implements Burger
             default : price=0; break;
         }
         
-        if (BunOrBowl=="In A Bowl") price +=OrderManager.PriceForBowl;
+        if (BunOrBowl!="On A Bun") price +=OrderManager.PriceForBowl;
         
         return price;
         
@@ -39,7 +39,6 @@ public class BaseBurger implements Burger
    
     public String orderDescription(){
         String result = Meat + ", " + Weight + ", " + BunOrBowl;
-        if (BunOrBowl=="In A Bowl") result += ", " + LettuceOrMix;
         return result;
     }
     

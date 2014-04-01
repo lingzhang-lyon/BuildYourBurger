@@ -27,5 +27,13 @@ public class OrderTest
     {
         OrderManager.printOrderAndPrice();
     }
+
+    @Test
+    public void TestMakeOrderThenPrint()
+    {
+        OrderManager om=new OrderManager();
+        om.makeOrderAndPrintOrderAndPrice();
+    }
 }
+
 
